@@ -79,7 +79,7 @@ class _DetectionScreenState extends State<DetectionScreen> {
   Future<void> _detectDiseases() async {
     if (_imageFile == null) return;
 
-    final uri = Uri.parse("http://10.0.2.2:8000/predict");
+    final uri = Uri.parse("https://dentaldetection.onrender.com/predict");
     final request = http.MultipartRequest("POST", uri);
     request.files.add(await http.MultipartFile.fromPath("file", _imageFile!.path));
 
